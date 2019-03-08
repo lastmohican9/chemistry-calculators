@@ -1,5 +1,4 @@
-# This program will determine molar mass and present mass or moles
-# of an element or compound given user inputs
+# This program will determine molar mass and present mass or moles of an element or compound given user inputs
 
 import string
 import math
@@ -62,9 +61,9 @@ def heading(var):
     print "================================================================================="
 
 
+heading("Stoichiometry calculator".upper())
 # this chunk defines some needed variables for top-level code
 # determines whether to convert grams to moles or moles to grams later on
-heading("Stoichiometry calculator".upper())
 elementOrCompound = str(raw_input("Are you working with an (element) or (compound)? "))
 molG = False
 gMol = False
