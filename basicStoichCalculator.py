@@ -56,9 +56,9 @@ pTableMass = {
 
 
 def heading(var):
-    print "================================================================================="
+    print "=" * len(var)
     print var
-    print "================================================================================="
+    print "=" * len(var)
 
 
 heading("Stoichiometry calculator".upper())
@@ -111,14 +111,18 @@ if elementOrCompound[0] == "c":
     if molG:
         conversionFactor = float(totMass)
         moles = float(raw_input("\nHow many moles of the compound do you have?: "))
-        conversion = round(moles * conversionFactor, 4)
+        '{:.4e}'.format(moles)
+        conversion = moles * conversionFactor
+        '{:.4e}'.format(conversion)
         print "The present mass of the compound is", conversion, "grams."
         raw_input("\nPress enter to close.")
     # and grams to moles conversion
     elif gMol:
         conversionFactor = float(1 / totMass)
         grams = float(raw_input("\nHow many grams of the compound do you have?: "))
-        conversion = round(grams * conversionFactor, 4)
+        '{:.4e}'.format(grams)
+        conversion = grams * conversionFactor
+        '{:.4e}'.format(conversion)
         print "The present compound contains", conversion, "moles."
         raw_input("\nPress enter to close.")
 
@@ -135,15 +139,17 @@ else:
     if molG:
         conversionFactor = float(molMass)
         moles = float(raw_input("How many moles of the element do you have?: "))
-        conversion = round(moles * conversionFactor, 4)
-        # I round to 4 decimal places, gets needed sig figs most of the time
-        # if you need more sig figs, change the number in the rounding argument
+        '{:.4e}'.format(moles)
+        conversion = moles * conversionFactor
+        '{:.4e}'.format(conversion)
         print "The present mass of", pTableNames[elemSym] + " is", conversion, "grams."
         raw_input("Press enter to close.")
 
     elif gMol:
         conversionFactor = float(1 / molMass)
         grams = float(raw_input("How many grams of the element do you have?: "))
-        conversion = round(grams * conversionFactor, 4)
+        '{:.4e}'.format(grams)
+        conversion = grams * conversionFactor
+        '{:.4e}'.format(conversion)
         print "There are", conversion, "moles of " + pTableNames[elemSym] + " present."
         raw_input("Press enter to close.")
